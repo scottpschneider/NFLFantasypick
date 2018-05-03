@@ -1,7 +1,27 @@
 function PlayersService(callback){
     var playersData = []
     //...
+    this.getPlayersByTeam = function(teamName){
+      //return an array of all players who match the given teamName.
+    }
+  
+    this.getPlayersByPosition = function(position){
+      //return an array of all players who match the given position.
+    }
    //...
+
+   function PlayersService(callback){
+    var playersData = [];
+  
+    this.getPlayersByTeam = function(teamName){
+      return playersData.filter(function(player){
+        if(player.team == teamName){
+          return true;
+        }
+      });
+    }
+  } 
+//...
      function loadPlayersData(){
        //check if the player already has a copy of the NFL playersData
        var localData = localStorage.getItem('playersData');
