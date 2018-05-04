@@ -1,32 +1,34 @@
 function FootballService(callback) {
   var playersData = []
+  var myTeam = []
   //...
-  this.getPlayersByTeam = function (teamName) {
-    //return an array of all players who match the given teamName.
-  }
 
   this.getPlayersByPosition = function (position) {
-    //return an array of all players who match the given position.
-  }
-  //...
+    return playersData.filter(function (player) {
+      if (player.position.includes(position)) { return true }
 
-  function PlayersService(callback) {
-    var playersData = [];
-
-    this.getPlayersByTeam = function (teamName) {
-      return playersData.filter(function (player) {
-        if (player.team == teamName) {
-          return true;
-        }
-      });
-    }
-  }
-  function  searchPlayers(query) {
-    var filteredResults = NFLPlayers.filter(function (player) {
-      return player.name.contains(query)
     })
-    return filteredResults
   }
+  this.getPlayersByName = function (name) {
+    return playersData.filter(function (player) {
+      if (player.fullname.toUpperCase().includes(name)) { return true }
+    })
+  }
+
+  this.getPlayersByTeam = function (teamName) {
+    return playersData.filter(function (player) {
+      if (player.pro_team == teamName) {
+        return true;
+      }
+    });
+  }
+
+  //this.searchPlayers = function searchPlayers(query) {
+    //var filteredResults = NFLPlayers.filter(function (player) {
+      //return player.name.contains(query)
+    //})
+    //return filteredResults
+  //}
   //...
   function loadPlayersData() {
     //check if the player already has a copy of the NFL playersData
@@ -52,5 +54,12 @@ function FootballService(callback) {
       callback(playersData)
     });
   }
+  this.addToMyTeam = function addToMyTeam(id){
+    var playerNew = playersData.find(function (player){
+      return player.id == id
+    })
+    myTeam.push(playerNew)
+  }
+
   loadPlayersData(); //call the function above every time we create a new service
 } 

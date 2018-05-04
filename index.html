@@ -19,11 +19,11 @@
             </h1>
         </div>
         <div class="row">
-            <form class="form-inline" onsubmit="app.controllers.footballController.getPlayers(e)">
+            <form class="form-inline" onsubmit="app.controllers.footballController.searchPlayers(event)">
                 <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
                 <div class="form-group">
-                    <input type="text" class="form-control" name="Player" placeholder="Player Name/Pos./Team" />
-                    <button type="submit" class="btn btn-primary" id="get-music-button">Get Player</button>
+                    <input type="text" class="form-control" name="player" placeholder="Player Name/Pos./Team" />
+                    <button type="submit" class="btn btn-primary" id="get-player-button">Get Player</button>
                 </div>
             </form>
             <div id="songs">
@@ -32,12 +32,12 @@
         <div class="row">
             <div class="col" id="myTeam">
                 <div class="card" id="playerCard">
-                    <h2>My Team</h2>
+                    <!-- <h2>My Team</h2>
                     <img class="NFLPic" src="NFL-logo.png" width="75px" height="auto" alt="">
                     <h3>Name</h3>
                     <h3>Position</h3>
                     <h3>Team</h3>
-                    <button>Remove from Team</button>
+                    <button>Remove from Team</button> -->
                 </div>
                 <div class="loader"></div>
             </div>
