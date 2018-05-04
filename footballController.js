@@ -62,7 +62,7 @@ function FootballController() {
     this.searchPlayers = function searchPlayers(e) {
         e.preventDefault();
         var query = e.target.name.value
-        var catchResults = footballService.searchName(query)
+        var catchResults = footballService.searchPlayers(query)
         drawSearchResults(catchResults)
     }
 }

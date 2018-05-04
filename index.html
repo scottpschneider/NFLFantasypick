@@ -19,8 +19,15 @@
             </h1>
         </div>
         <div class="row">
-            <input placeholder="player name/pos./team" type="search">
-            <button>Player Search</button>
+            <form class="form-inline" onsubmit="app.controllers.footballController.getPlayers(e)">
+                <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
+                <div class="form-group">
+                    <input type="text" class="form-control" name="Player" placeholder="Player Name/Pos./Team" />
+                    <button type="submit" class="btn btn-primary" id="get-music-button">Get Player</button>
+                </div>
+            </form>
+            <div id="songs">
+            </div>
         </div>
         <div class="row">
             <div class="col" id="myTeam">

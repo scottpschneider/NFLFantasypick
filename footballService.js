@@ -21,7 +21,7 @@ function FootballService(callback) {
       });
     }
   }
-  function searchPlayers(query) {
+  function  searchPlayers(query) {
     var filteredResults = NFLPlayers.filter(function (player) {
       return player.name.contains(query)
     })
