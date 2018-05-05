@@ -7,11 +7,8 @@ function FootballController() {
         console.log(players)
         //this reference to the h1 search results needs to match an id on my index.html yes? can it be a div class or need be h1?
         var template = "<h2>My Team</h2>";
-        //by setting that template equal to a tag on html page i am what, setting where that temp will populate?
-        for (let i = 0; i <5 ; i++) {//players.length
+        for (let i = 0; i < 5; i++) {//players.length
             const player = players[i];
-            //questions about this image class now. class comes from html, also corresponds with a css style. what about thumbnail? 
-            //in marvel thing we did description in a p tag here.  what will this do if i use more h3's, and detail them..?
             template += `
             <div>
             <img class="NFLpic" src="${player.photo}" alt="">
@@ -25,10 +22,8 @@ function FootballController() {
         document.getElementById("myTeam").innerHTML = template
     }
     function drawSearchResults(players) {
-        //this is draw function ya
-        debugger
         var template = "<h2>Search Results</h2>";
-        for (let i = 0; i <5 ; i++) {//players.length
+        for (let i = 0; i < players.length; i++) {
             const player = players[i];
             template += `
                   <div>
@@ -42,23 +37,22 @@ function FootballController() {
         }
         document.getElementById("searchResults").innerHTML = template;
     }
-//function ItunesController(){
-   // var itunesService = new ItunesService()
+    //function ItunesController(){
+    // var itunesService = new ItunesService()
     //Do Not Modify the getMusic function
     //this.getMusic = function getMusic(e){
-      //e.preventDefault();
-      //var artist = e.target.artist.value;
-      //itunesService.getMusicByArtist(artist).then(draw); //after get music by artist returns what are you doing with the objects?
-   // }
-  
+    //e.preventDefault();
+    //var artist = e.target.artist.value;
+    //itunesService.getMusicByArtist(artist).then(draw); //after get music by artist returns what are you doing with the objects?
+    // }
+
     //Start coding here
-   // function draw(results){
+    // function draw(results){
     //   console.log(results)
     // }
 
     this.searchPlayers = function searchPlayers(e) {
         e.preventDefault();
-        debugger
         var query = e.target.player.value.toUpperCase()
         //var catchResults = footballService.searchPlayers(query)
         var playerPosition = footballService.getPlayersByPosition(query)
@@ -68,19 +62,19 @@ function FootballController() {
         var resultsArr = PositionAndName.concat(playerTeam)
         drawSearchResults(resultsArr)
     }
-    function draw(results){
+    function draw(results) {
         console.log(results)
     }
-    
-    
-    
+
+
+
     //Public
-    
-    this.addToTeam = function addToTeam(id){
-        footballService.addToMyTeam(id);
+
+    this.addToTeam = function addToTeam(id) {
+        footballService.addToTeam(id, drawMyTeam);
 
     };
-    //this.removeFromTeam = function removeFromTeam(){
-       // footballService.searchPlayers.removeFromTeam(id, drawMyTeam);
-    //};
+    this.removeFromTeam = function removeFromTeam(id) {
+        footballService.removeFromTeam(id, drawMyTeam)
+    };
 }

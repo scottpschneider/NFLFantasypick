@@ -1,7 +1,6 @@
 function FootballService(callback) {
   var playersData = []
   var myTeam = []
-  //...
 
   this.getPlayersByPosition = function (position) {
     return playersData.filter(function (player) {
@@ -23,21 +22,11 @@ function FootballService(callback) {
     });
   }
 
-  //this.searchPlayers = function searchPlayers(query) {
-    //var filteredResults = NFLPlayers.filter(function (player) {
-      //return player.name.contains(query)
-    //})
-    //return filteredResults
-  //}
   //...
   function loadPlayersData() {
-    //check if the player already has a copy of the NFL playersData
     var localData = localStorage.getItem('playersData');
-    //if they do, pull from there
     if (localData) {
       playersData = JSON.parse(localData);
-      //return will short-circuit the loadPlayersData function
-      //this will prevent the code below from ever executing
       return callback(playersData)
     }
     //if not go get that data
@@ -54,8 +43,10 @@ function FootballService(callback) {
       callback(playersData)
     });
   }
-  this.addToMyTeam = function addToMyTeam(id){
-    var playerNew = playersData.find(function (player){
+
+  
+  this.addToTeam = function addToTeam(id) {
+    var playerNew = playersData.find(function (player) {
       return player.id == id
     })
     myTeam.push(playerNew)
