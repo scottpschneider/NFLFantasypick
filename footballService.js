@@ -1,6 +1,6 @@
 function FootballService(callback) {
-  var playersData = []
-  var myTeam = []
+  var playersData = [];
+  var myTeam = [];
 
   this.getPlayersByPosition = function (position) {
     return playersData.filter(function (player) {
@@ -44,12 +44,23 @@ function FootballService(callback) {
     });
   }
 
-  
-  this.addToTeam = function addToTeam(id) {
+
+  this.addMyTeam = function addMyTeam(newPlayerid, cb) {
     var playerNew = playersData.find(function (player) {
-      return player.id == id
+      return player.id == playerNew
     })
     myTeam.push(playerNew)
+    cb(myTeam);
+  }
+  this.removeFromTeam = function removeFromTeam(id, draw) {
+    debugger
+    var removePlayer = myTeam.find(function (player) {
+      return player.Id == removeId
+    })
+  var index = myTeam.indexOf(removePlayer)
+    myTeam.splice(index, 1)
+    draw(myTeam)
+      ;
   }
 
   loadPlayersData(); //call the function above every time we create a new service

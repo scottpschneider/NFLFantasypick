@@ -4,8 +4,6 @@ function FootballController() {
     var footballService = new FootballService(drawMyTeam);
 
     function drawMyTeam(players) {
-        console.log(players)
-        //this reference to the h1 search results needs to match an id on my index.html yes? can it be a div class or need be h1?
         var template = "<h2>My Team</h2>";
         for (let i = 0; i < 5; i++) {//players.length
             const player = players[i];
@@ -71,7 +69,7 @@ function FootballController() {
     //Public
 
     this.addToTeam = function addToTeam(id) {
-        footballService.addToTeam(id, drawMyTeam);
+        footballService.addMyTeam(id, drawMyTeam);
 
     };
     this.removeFromTeam = function removeFromTeam(id) {
