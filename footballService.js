@@ -27,7 +27,7 @@ function FootballService(callback) {
     var localData = localStorage.getItem('playersData');
     if (localData) {
       playersData = JSON.parse(localData);
-      return callback(playersData)
+      // return callback(playersData)
     }
     //if not go get that data
     var url = "https://bcw-getter.herokuapp.com/?url=";
@@ -40,23 +40,30 @@ function FootballService(callback) {
       console.log('Writing Player Data to localStorage')
       localStorage.setItem('playersData', JSON.stringify(playersData))
       console.log('Finished Writing Player Data to localStorage')
-      callback(playersData)
+      // callback(playersData)
     });
   }
 
 
-  this.addMyTeam = function addMyTeam(newPlayerid, cb) {
+  this.addMyTeam = function addMyTeam(newPlayerid, cb, cb2) {
     var playerNew = playersData.find(function (player) {
-      return player.id == playerNew
+      return player.id == newPlayerid
     })
-    myTeam.push(playerNew)
-    cb(myTeam);
+    if(myTeam.includes(playerNew) == false){ 
+      if (myTeam.length <= 2) {
+      myTeam.push(playerNew)
+      cb(myTeam);
+    } else {
+      cb2('Team is full. Remove player')
+    }} 
+
+
   }
   this.removeFromTeam = function removeFromTeam(id, draw) {
-    debugger
     var removePlayer = myTeam.find(function (player) {
-      return player.Id == removeId
+      return player.Id == id
     })
+    playersData.push(removePlayer)
   var index = myTeam.indexOf(removePlayer)
     myTeam.splice(index, 1)
     draw(myTeam)
