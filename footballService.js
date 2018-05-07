@@ -50,18 +50,18 @@ function FootballService(callback) {
       return player.id == newPlayerid
     })
     if(myTeam.includes(playerNew) == false){ 
-      if (myTeam.length <= 2) {
+      if (myTeam.length <= 11) {
       myTeam.push(playerNew)
       cb(myTeam);
     } else {
-      cb2('Team is full. Remove player')
+      cb2 ('Team is full. Remove player')
     }} 
 
 
   }
   this.removeFromTeam = function removeFromTeam(id, draw) {
     var removePlayer = myTeam.find(function (player) {
-      return player.Id == id
+      return player.id == id
     })
     playersData.push(removePlayer)
   var index = myTeam.indexOf(removePlayer)
