@@ -50,7 +50,7 @@ function FootballService(callback) {
       return player.id == newPlayerid
     })
     if(myTeam.includes(playerNew) == false){ 
-      if (myTeam.length <= 11) {
+      if (myTeam.length <= 10) {
       myTeam.push(playerNew)
       cb(myTeam);
     } else {

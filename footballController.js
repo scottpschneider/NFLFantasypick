@@ -14,9 +14,9 @@ function FootballController() {
             template += `
             <div>
             <img class="NFLpic" src="${player.photo}" alt="">
-            <h1>Name: ${player.fullname}</h1>
-            <h3>Position: ${player.position}
-            <h3>Team:  ${player.pro_team ? player.pro_team : "unknown"}</p>
+            <h3>Name: ${player.fullname}</h1>
+            <h4>Position: ${player.position}
+            <h4>Team:  ${player.pro_team ? player.pro_team : "unknown"}</p>
             <button onclick="app.controllers.footballController.removeFromTeam(${player.id})">Remove From Team</button> 
           </div>
 `;
@@ -31,8 +31,8 @@ function FootballController() {
                   <div>
                           <img class="NFLPic" src="${player.photo}" alt="">
                           <h3>Name: ${player.fullname}</h3>
-                          <h3>Position: ${player.position}</h3>
-                          <h3>Team: ${player.pro_team ? player.pro_team : "unknown"}</h3>
+                          <h4>Position: ${player.position}</h3>
+                          <h4>Team: ${player.pro_team ? player.pro_team : "unknown"}</h3>
                           <button onclick="app.controllers.footballController.addToTeam(${player.id})">Add to team</button>
                         </div>
                   `;

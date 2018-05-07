@@ -12,48 +12,48 @@
 </head>
 
 <body>
-    <section class="container-fluid" "d-flex">
-        <div class="row" "d-inline-flex p-2">
-            <h1 align="center">
-                <em>Fantasy Football</em>
-            </h1>
-        </div>
-        <div class="row">
-            <form class="form-inline" onsubmit="app.controllers.footballController.searchPlayers(event)">
-                <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
-                <div class="form-group">
-                    <input type="text" class="form-control" name="player" placeholder="Player Name/Pos./Team" />
-                    <button type="submit" class="btn btn-primary" id="get-player-button">Get Player</button>
+    <section>
+        <div class="container" "d-flex justify-content-center" "full">
+            <div class="row">
+                <h1>
+                    <em>Fantasy Football</em>
+                </h1>
+            </div>
+            <div class="row">
+                <form class="form-inline" onsubmit="app.controllers.footballController.searchPlayers(event)">
+                    <!--DO NOT MODIFY THE ID OR ONCLICK ATTRIBUTES IN THIS FORM-->
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="player" placeholder="Player Name/Pos./Team" />
+                        <button type="submit" class="btn btn-primary" id="get-player-button">Get Player</button>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
+                <div class="col" id="myTeam">
+                    <div class="card" "playerCard">
+                        <h2>My Team</h2>
+                        <img class="NFLPic" src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/%22" width="75px" height="auto"
+                            alt="">
+                        <h3>Name</h3>
+                        <h3>Position</h3>
+                        <h3>Team</h3>
+                        <button>Remove from Team</button>
+                    </div>
                 </div>
-            </form>
-            <div id="songs">
+                <p id="display" class="full"></p>
+                <div class="col" id="searchResults">
+                    <div class="card" id="searchResultsCard">
+                        <h2>Search Results</h2>
+                        <img class="NFLPic" src="NFL-logo.png/" width="75px" height="auto" alt="">
+                        <h3>Name</h3>
+                        <h3>Position</h3>
+                        <h3>Team</h3>
+                        <button>Add to Team</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col" id="myTeam">
-                <div class= "card" "playerCard">
-                     <h2>My Team</h2>
-                    <img class="NFLPic" src="http://s.nflcdn.com/static/content/public/image/fantasy/transparent/200x200/%22" width="75px" height="auto" alt="">
-                    <h3>Name</h3>
-                    <h3>Position</h3>
-                    <h3>Team</h3>
-                    <button>Remove from Team</button>
-                </div>
-            </div>
-            <p id="display"></p>
-            <div class="col" id="searchResults">
-                <div class="card" id="searchResultsCard">
-                    <h2>Search Results</h2>
-                    <img class="NFLPic" src="NFL-logo.png/" width="75px" height="auto" alt="">
-                    <h3>Name</h3>
-                    <h3>Position</h3>
-                    <h3>Team</h3>
-                    <button>Add to Team</button>
-                </div>
-            </div>
         </div>
-        </div>
-
     </section>
 
     <!-- EXTERNAL LIBRARIES -->

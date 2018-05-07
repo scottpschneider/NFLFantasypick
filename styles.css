@@ -12,3 +12,21 @@
 body{
     background-color: rgb(0, 247, 255) ;
 }
+.full{
+    font-size: x-large;
+    justify-content: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    outline: azure;
+    display: block;
+}
+h2{
+    text-align: center;
+    font-style: oblique;
+    font-size: x-large;
+    text-decoration: underline;
+}
+h1{
+    text-emphasis: block;
+    text-align: center;
+    
+}
