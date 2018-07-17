@@ -10,7 +10,10 @@
     animation: spin 2s linear infinite;
 }
 body{
-    background-color: rgb(0, 247, 255) ;
+        background-image: url("fantasyfballback.jpg");
+        background-color: #cccccc;
+        background-color: rgb(0, 247, 255) ;
+    
 }
 .full{
     font-size: x-large;
